@@ -12,3 +12,4 @@ def create():
 	connection.execute(insertQuery)
 	connection.commit()
 	print(getGeneralMessage("Create"))
+	
