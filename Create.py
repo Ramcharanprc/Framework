@@ -11,4 +11,5 @@ def create():
 	insertQuery = "insert into " + (tableName) + " values" + str(fieldValueTuple)
 	connection.execute(insertQuery)
 	connection.commit()
-	print(printGeneralMessage("Create"))
+	print(getGeneralMessage("Create"))
+	
