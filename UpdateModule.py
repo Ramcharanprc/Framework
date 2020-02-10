@@ -7,5 +7,4 @@ def update():
 	connection.execute("update " + tableName + " set " + columnNames[userOption] + " = '" + input("Enter " + fieldNames[userOption] + ": ") + " where " + columnName[0] + " = '" + userInput + "';")
 	connection.commit()
 	print(getGeneralMessage('Update'))
-	print()
 
