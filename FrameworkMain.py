@@ -2,12 +2,12 @@
 import sqlite3
 import Create
 import ViewAndSearch
-import Update
+import UpdateModule
 import Delete
 import Exit
 
 databaseName = 'Framework.db'
-generalTable = 'generalConfigTable'
+generalTable = 'GeneralConfigTable'
 menuFile = 'Menu.cfg'
 connection = sqlite3.connect(databaseName)
 generalConfigurations = connection.execute("select * from " + generalTable)
@@ -39,7 +39,7 @@ def printRecord(record):
 def getRecord():
 	global userInput
 	userInput = input('Enter ' + fieldNames[0] + ': ')
-	data = connection.execute('select * from ' + tableName + ' where ' + columnNames[0] + ' = ' + userInput + ' and ' + columnNames[-1] ' = "' + active + '"')
+	# data = connection.execute('select * from ' + tableName + ' where ' + columnNames[0] + ' = "' + userInput + '" and ' + columnNames[-1] ' = "' + active + '"')
 	for record in data:
 		if(len(record) != 0):
 			return record
