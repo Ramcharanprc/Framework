@@ -1,4 +1,4 @@
 # Exit function.
-def Exit()
+def Exit():
 	print("You have exited!")
 	exit(1)
