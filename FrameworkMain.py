@@ -8,8 +8,9 @@ import Exit
 
 menu = []
 with open(menuFile, 'r') as fpFile:
-	for line in fpFile:
-		menu.append(line)
+	for lineWithoutSpace in fpFile:
+		lineWithSpace = lineWithoutSpace.replace('\n', '')
+		menu.append(lineWithSpace)
 
 def showMenu():
 	for line in menu:
