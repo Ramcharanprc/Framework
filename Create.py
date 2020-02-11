@@ -4,7 +4,7 @@ def create():
 	for index in range(0, len(MSC.fieldNames) - 1):
 		userInput = input("Enter " + MSC.fieldNames[index] +": ")
 		if(index == 0):
-			fieldValues.append(int(userInput))
+			fieldValues.append(userInput)
 		else:	
 			fieldValues.append(userInput)
 	fieldValues.append(MSC.active)
