@@ -1,5 +1,4 @@
 import sqlite3
-import FrameworkMain as FW
 
 active = 'A'
 inactive = 'I'
@@ -28,23 +27,15 @@ for row in fieldTable:
 def printRecord(record):
 	for index in range(0, len(fieldNames) - 1):
 		print(fieldNames[index] +": "+ (record[index]))
-		print()
+	print()
 
 def getRecord():
 	global userInput
 	userInput = input('Enter ' + fieldNames[0] + ': ')
-	# print(userInput)
-	# print(tableName)
-	# print(columnNames[0])
-	# print(columnNames[-1])
-	# print(active)
 	query = 'select * from ' + tableName + ' where ' + columnNames[0] +' = "' + userInput + '" and ' + columnNames[-1] + ' = "' + active + '"'
-	# query = 'select * from ' + tableName + ' where ' + columnNames[0] + ' = "' + userInput + '" and ' + columnNames[-1] ' = "A"'
-	print(query)
 	data = connection.execute(query)
 	for record in data:
 		if(len(record) != 0):
 			return record
 		else:
 			print(getGeneralMessage('Error'))
-			FW.showMenu()
