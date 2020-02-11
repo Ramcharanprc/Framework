@@ -1,7 +1,7 @@
 # View and search functions.
 import Miscellaneous as MSC
 def view():
-	cursor = MSC.connection.execute("select * from " + tableName)
+	cursor = MSC.connection.execute("select * from " + MSC.tableName)
 	for row in cursor:
 		MSC.printRecord(row)
 	print(MSC.getGeneralMessage("Print"))

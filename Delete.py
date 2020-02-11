@@ -1,9 +1,10 @@
 # Delete module.
+import Miscellaneous as MSC
 def delete():
-	matchedRecord = getRecord()
-	printRecord(matchedRecord)
-	userConfirmation = input(getGeneralMessage("Delete_Prompt"))
+	matchedRecord = MSC.getRecord()
+	MSC.printRecord(matchedRecord)
+	userConfirmation = input(MSC.getGeneralMessage("Delete_Prompt"))
 	if(userConfirmation == 'y'):
-		query = connection.execute("update " + tableName + " set " + columnNames[-1] + " = '" + inactive + "' where " + columnNames[0] + " = '" + matchedRecord[0] + "'")
-		connection.commit()
-	print(getGeneralMessage("Delete"))
+		query = MSC.connection.execute("update " + MSC.tableName + " set " + MSC.columnNames[-1] + " = '" + MSC.inactive + "' where " + MSC.columnNames[0] + " = '" + matchedRecord[0] + "'")
+		MSC.connection.commit()
+	print(MSC.getGeneralMessage("Delete"))

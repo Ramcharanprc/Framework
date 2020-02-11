@@ -5,7 +5,6 @@ active = 'A'
 inactive = 'I'
 databaseName = 'Framework.db'
 generalTable = 'GeneralConfigTable'
-# menuFile = 'Menu.cfg'
 connection = sqlite3.connect(databaseName)
 generalConfigurations = connection.execute("select * from " + generalTable)
 general = {}
@@ -15,6 +14,7 @@ for row in generalConfigurations:
 def getGeneralMessage(configurationKey):
 	return general[configurationKey]
 tableName = getGeneralMessage('Table_Name')
+print(tableName)
 
 fieldTable = connection.execute('pragma table_info(' + tableName + ')')
 fieldNames = []
@@ -35,7 +35,7 @@ def getRecord():
 	userInput = input('Enter ' + fieldNames[0] + ': ')
 	print(columnNames[0])
 	print(columnNames[-1])
-	# query = 'select * from ' + tableName + ' where ' + columnNames[0] + ' = "' + userInput + '" and ' + columnNames[-1] ' = "' + active + '"'
+	# query = ('select * from ' + tableName + ' where ' + columnNames[0] + ' = "' + userInput + '" and ' + columnNames[-1] ' = "' + active + '"')
 	print(query)
 	data = connection.execute(query)
 	for record in data:

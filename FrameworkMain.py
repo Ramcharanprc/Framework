@@ -6,6 +6,7 @@ import UpdateModule
 import Delete
 import Exit
 
+menuFile = 'Menu.cfg'
 menu = []
 with open(menuFile, 'r') as fpFile:
 	for lineWithoutSpace in fpFile:
