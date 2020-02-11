@@ -1,11 +1,11 @@
 # View and search functions.
-import FrameworkMain
+import Miscellaneous as MSC
 def view():
-	cursor = connection.execute("select * from " + tableName)
+	cursor = MSC.connection.execute("select * from " + tableName)
 	for row in cursor:
-		printRecord(row)
-	print(getGeneralMessage("Print"))
+		MSC.printRecord(row)
+	print(MSC.getGeneralMessage("Print"))
 
 def search():
-	printRecord(getRecord()) # returned record from getRecord() is passed as an argument to printRecord()
-	print(getGeneralMessage("Search"))
+	MSC.printRecord(MSC.getRecord()) # returned record from getRecord() is passed as an argument to printRecord()
+	print(MSC.getGeneralMessage("Search"))
