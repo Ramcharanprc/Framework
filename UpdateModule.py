@@ -3,7 +3,7 @@ def update():
 	MSC.printRecord(MSC.getRecord())
 	for updateCounter in range(1, len(MSC.fieldNames)):
 		print(str(updateCounter) + ". " + MSC.fieldNames[updateCounter])
-	userOption = input(MSC.getGeneralMessage('Update_Prompt'))
+	userOption = str(input(MSC.getGeneralMessage('Update_Prompt')))
 	MSC.connection.execute("update " + MSC.tableName + " set " + MSC.columnNames[userOption] + " = '" + input("Enter " + MSC.fieldNames[userOption] + ": ") + " where " + MSC.columnNames[0] + " = '" + MSC.userInput + "';")
 	MSC.connection.commit()
 	print(MSC.getGeneralMessage('Update'))
