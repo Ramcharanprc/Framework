@@ -6,6 +6,8 @@ import UpdateModule
 import Delete
 import Exit
 
+active = 'A'
+inactive = 'I'
 databaseName = 'Framework.db'
 generalTable = 'GeneralConfigTable'
 menuFile = 'Menu.cfg'
@@ -39,7 +41,7 @@ def printRecord(record):
 def getRecord():
 	global userInput
 	userInput = input('Enter ' + fieldNames[0] + ': ')
-	# data = connection.execute('select * from ' + tableName + ' where ' + columnNames[0] + ' = "' + userInput + '" and ' + columnNames[-1] ' = "' + active + '"')
+	data = connection.execute('select * from ' + tableName + ' where ' + columnNames[0] + ' = "' + userInput + '" and ' + columnNames[-1] ' = "' + active + '"')
 	for record in data:
 		if(len(record) != 0):
 			return record
