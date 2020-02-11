@@ -1,10 +1,10 @@
+import Miscellaneous as MSC
 def update():
-	readUserInput()
-	printRecord(getRecord())
-	for updateCounter in range(1, len(fieldNames)):
-		print(str(updateCounter) + ". " + fieldNames[updateCounter])
-	userOption = input(getGeneralMessage('Update_Prompt'))
-	connection.execute("update " + tableName + " set " + columnNames[userOption] + " = '" + input("Enter " + fieldNames[userOption] + ": ") + " where " + columnName[0] + " = '" + userInput + "';")
-	connection.commit()
-	print(getGeneralMessage('Update'))
+	MSC.printRecord(MSC.getRecord())
+	for updateCounter in range(1, len(MSC.fieldNames)):
+		print(str(updateCounter) + ". " + MSC.fieldNames[updateCounter])
+	userOption = input(MSC.getGeneralMessage('Update_Prompt'))
+	MSC.connection.execute("update " + MSC.tableName + " set " + MSC.columnNames[userOption] + " = '" + input("Enter " + MSC.fieldNames[userOption] + ": ") + " where " + MSC.columnNames[0] + " = '" + MSC.userInput + "';")
+	MSC.connection.commit()
+	print(MSC.getGeneralMessage('Update'))
 
