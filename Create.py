@@ -9,7 +9,7 @@ def create():
 			fieldValues.append(userInput)
 	fieldValues.append(MSC.active)
 	fieldValueTuple = tuple(fieldValues)
-	insertQuery = "insert into " + (tableName) + " values" + str(fieldValueTuple)
+	insertQuery = "insert into " + (MSC.tableName) + " values" + str(fieldValueTuple)
 	MSC.connection.execute(insertQuery)
 	MSC.connection.commit()
 	print(MSC.getGeneralMessage("Create"))
