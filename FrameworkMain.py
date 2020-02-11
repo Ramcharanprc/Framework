@@ -21,7 +21,7 @@ def getGeneralMessage(configurationKey):
 	return general[configurationKey]
 tableName = getGeneralMessage('Table_Name')
 
-fieldTable = connection.execute('.pragma table_info ' + tableName)
+fieldTable = connection.execute('pragma table_info(' + tableName + ')')
 fieldNames = []
 columnNames = []
 for row in fieldTable:
@@ -41,7 +41,9 @@ def printRecord(record):
 def getRecord():
 	global userInput
 	userInput = input('Enter ' + fieldNames[0] + ': ')
-	data = connection.execute('select * from ' + tableName + ' where ' + columnNames[0] + ' = "' + userInput + '" and ' + columnNames[-1] ' = "' + active + '"')
+	# query = 'select * from ' + tableName + ' where ' + columnNames[0] + ' = "' + userInput + '" and ' + columnNames[-1] ' = "' + active + '"'
+	print(query)
+	data = connection.execute(query)
 	for record in data:
 		if(len(record) != 0):
 			return record
@@ -58,4 +60,4 @@ def showMenu():
 	else:
 		print('Invalid option!\nPlease enter a valid option.')
 	showMenu()
-showmenu()
+showMenu()
