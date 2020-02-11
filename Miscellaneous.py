@@ -33,7 +33,13 @@ def printRecord(record):
 def getRecord():
 	global userInput
 	userInput = input('Enter ' + fieldNames[0] + ': ')
-	query = ('select * from ' + tableName + ' where ' + columnNames[0] + ' = "' + userInput + '" and ' + columnNames[-1] ' = "' + active + '"')
+	# print(userInput)
+	# print(tableName)
+	# print(columnNames[0])
+	# print(columnNames[-1])
+	# print(active)
+	query = 'select * from ' + tableName + ' where ' + columnNames[0] +' = "' + userInput + '" and ' + columnNames[-1] + ' = "' + active + '"'
+	# query = 'select * from ' + tableName + ' where ' + columnNames[0] + ' = "' + userInput + '" and ' + columnNames[-1] ' = "A"'
 	print(query)
 	data = connection.execute(query)
 	for record in data:
