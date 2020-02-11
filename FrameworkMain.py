@@ -43,9 +43,9 @@ def getRecord():
 	for record in data:
 		if(len(record) != 0):
 			return record
-	else:
-		print(getGeneralMessage('Error'))
-		showMenu()
+		else:
+			print(getGeneralMessage('Error'))
+			showMenu()
 
 def showMenu():
 	for line in menu:
