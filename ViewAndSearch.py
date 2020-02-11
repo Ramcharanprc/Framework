@@ -1,4 +1,5 @@
 # View and search functions.
+import FrameworkMain
 def view():
 	cursor = connection.execute("select * from " + tableName)
 	for row in cursor:
