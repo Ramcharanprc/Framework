@@ -5,7 +5,6 @@ active = 'A'
 inactive = 'I'
 databaseName = 'Framework.db'
 generalTable = 'GeneralConfigTable'
-menuFile = 'Menu.cfg'
 connection = sqlite3.connect(databaseName)
 generalConfigurations = connection.execute("select * from " + generalTable)
 general = {}
