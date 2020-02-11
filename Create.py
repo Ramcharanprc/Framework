@@ -12,5 +12,5 @@ def create():
 	insertQuery = "insert into " + (MSC.tableName) + " values" + str(fieldValueTuple)
 	MSC.connection.execute(insertQuery)
 	MSC.connection.commit()
-	print(MSC.getGeneralMessage("Create"))
+	print(MSC.getGeneralMessage("Create") + '\n')
 	

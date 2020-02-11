@@ -20,6 +20,6 @@ def showMenu():
 	if(userChoice > 0 and userChoice < 7):
 		[Create.create, ViewAndSearch.view, UpdateModule.update, Delete.delete, ViewAndSearch.search, Exit.Exit][userChoice - 1]()
 	else:
-		print('Invalid option!\nPlease enter a valid option.')
+		print('Invalid option!\nPlease enter a valid option.\n')
 	showMenu()
 showMenu()

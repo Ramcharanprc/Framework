@@ -25,17 +25,19 @@ for row in fieldTable:
 
 
 def printRecord(record):
-	for index in range(0, len(fieldNames) - 1):
-		print(fieldNames[index] +": "+ (record[index]))
-	print()
+	if(record != None):
+		for index in range(0, len(fieldNames) - 1):
+			print(fieldNames[index] +": "+ (record[index]))
+		print()
 
 def getRecord():
 	global userInput
+	global flag 
+	flag = 0
 	userInput = input('Enter ' + fieldNames[0] + ': ')
 	query = 'select * from ' + tableName + ' where ' + columnNames[0] +' = "' + userInput + '" and ' + columnNames[-1] + ' = "' + active + '"'
 	data = connection.execute(query)
 	for record in data:
 		if(len(record) != 0):
+			flag = 1
 			return record
-		else:
-			print(getGeneralMessage('Error'))
